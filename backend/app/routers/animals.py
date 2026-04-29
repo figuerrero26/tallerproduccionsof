@@ -24,7 +24,42 @@ def detalle(animal_id: int, db: Session = Depends(get_db)):
 
 @router.post("", response_model=AnimalOut, status_code=201)
 def crear(data: AnimalCreate, db: Session = Depends(get_db)):
-    return crud.create(db, data)
+    animal = crud.create(db, data)
+    
+    from app.crud import news as news_crud
+    from app.schemas.news import NewsCreate
+    
+    especie_display = {
+        "perro": "perro",
+        "gato": "gato", 
+        "otro": "animal"
+    }.get(data.especie, "animal")
+    
+    titulo = f"¡Nuevo {especie_display} disponible para adopción!"
+    
+    # Usamos una lista para organizar los párrafos
+    parrafos = [
+        f"Se ha registrado un nuevo {especie_display} llamado {data.nombre}."
+    ]
+    
+    if data.descripcion:
+        # Añadimos la descripción como un bloque separado
+        parrafos.append(f"Descripción: {data.descripcion}")
+    
+    if data.edad:
+        # Aquí puedes usar tu lógica de meses/años
+        parrafos.append(f"Edad: {data.edad}")
+    
+    parrafos.append("¡Contáctanos para más información!")
+    
+    # Unimos todo con DOS saltos de línea para que parezcan párrafos reales
+    # o uno solo (\n) si solo quieres que baje de renglón
+    contenido = "\n\n".join(parrafos)
+    
+    noticia_data = NewsCreate(titulo=titulo, contenido=contenido, autor="Sistema")
+    news_crud.create(db, noticia_data)
+    
+    return animal
 
 
 @router.put("/{animal_id}", response_model=AnimalOut)

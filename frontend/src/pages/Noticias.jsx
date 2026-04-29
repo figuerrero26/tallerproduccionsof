@@ -13,9 +13,11 @@ export default function Noticias() {
     <section>
       <h1>Noticias</h1>
       {noticias.length === 0 && <p>No hay noticias publicadas todavía.</p>}
-      {noticias.map((n) => (
-        <NewsItem key={n.id} noticia={n} />
-      ))}
+      <div className="grid">
+        {noticias.map((n) => (
+          <NewsItem key={n.id} noticia={n} />
+        ))}
+      </div>
     </section>
   );
 }

@@ -23,6 +23,9 @@ services:
         condition: service_healthy
     ports:
       - "8080:8000"
+    # AÑADE ESTO: Para que los cambios en Python se recarguen solos
+    volumes:
+      - ./backend:/app
 
   frontend:
     build: ./frontend
@@ -30,8 +33,13 @@ services:
       - backend
     ports:
       - "5173:5173"
+    # MODIFICA ESTO:
     volumes:
-      - ./frontend/src:/app/src
+      - ./frontend:/app
+      - /app/node_modules
+    # AÑADE ESTO: A veces Docker en Windows/Mac necesita "polling" para detectar cambios
+    environment:
+      - CHOKIDAR_USEPOLLING=true
 
 volumes:
   db_data:

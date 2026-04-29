@@ -43,6 +43,13 @@ body {
   border-radius: 8px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
+
+.card p {
+  white-space: pre-wrap;
+  line-height: 1.5;
+  margin: 0.8rem 0;
+}
+
 .card h3 { margin-top: 0; }
 
 .form { display: flex; flex-direction: column; gap: 0.8rem; max-width: 480px; }

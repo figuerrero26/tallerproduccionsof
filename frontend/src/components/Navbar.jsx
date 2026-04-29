@@ -8,7 +8,6 @@ export default function Navbar() {
         <li><Link to="/">Inicio</Link></li>
         <li><Link to="/animales">Animales</Link></li>
         <li><Link to="/noticias">Noticias</Link></li>
-        <li><Link to="/eventos">Eventos</Link></li>
         <li><Link to="/registrar">Registrar</Link></li>
       </ul>
     </nav>

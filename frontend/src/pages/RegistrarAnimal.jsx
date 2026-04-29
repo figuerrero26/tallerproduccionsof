@@ -5,6 +5,7 @@ const initial = {
   nombre: "",
   especie: "perro",
   edad: "",
+  unidadEdad: "años",
   estado: "disponible",
   descripcion: "",
 };
@@ -20,10 +21,15 @@ export default function RegistrarAnimal() {
     e.preventDefault();
     setMsg(null);
     try {
+      // Guardar la edad exactamente como la ingresa el usuario (en años)
       const payload = {
-        ...form,
+        nombre: form.nombre,
+        especie: form.especie,
         edad: form.edad ? Number(form.edad) : null,
+        estado: form.estado,
+        descripcion: form.descripcion,
       };
+
       const created = await api.crearAnimal(payload);
       setMsg(`Animal "${created.nombre}" registrado con éxito (id ${created.id}).`);
       setForm(initial);
@@ -45,6 +51,7 @@ export default function RegistrarAnimal() {
             required
           />
         </label>
+
         <label>
           Especie
           <select name="especie" value={form.especie} onChange={onChange}>
@@ -53,16 +60,25 @@ export default function RegistrarAnimal() {
             <option value="otro">Otro</option>
           </select>
         </label>
+
         <label>
-          Edad (años)
-          <input
-            type="number"
-            name="edad"
-            value={form.edad}
-            onChange={onChange}
-            min="0"
-          />
+          Edad
+          <div style={{ display: 'flex', gap: '10px' }}>
+            <input
+              type="number"
+              name="edad"
+              value={form.edad}
+              onChange={onChange}
+              min="0"
+              placeholder="Ej: 2"
+            />
+            <select name="unidadEdad" value={form.unidadEdad} onChange={onChange}>
+              <option value="meses">Meses</option>
+              <option value="años">Años</option>
+            </select>
+          </div>
         </label>
+
         <label>
           Estado
           <select name="estado" value={form.estado} onChange={onChange}>
@@ -71,6 +87,7 @@ export default function RegistrarAnimal() {
             <option value="adoptado">Adoptado</option>
           </select>
         </label>
+
         <label>
           Descripción
           <textarea
@@ -80,6 +97,7 @@ export default function RegistrarAnimal() {
             rows="4"
           />
         </label>
+
         <button type="submit">Guardar</button>
       </form>
       {msg && <p className="msg">{msg}</p>}
