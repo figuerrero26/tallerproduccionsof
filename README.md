@@ -3,8 +3,7 @@
 Sistema institucional para gestionar animales en adopción, noticias, eventos y
 registros de interesados.
 
-> Para la propuesta completa del taller (arquitectura, modelo de datos,
-> agilidad, Kaizen) ver **[PROPUESTA.md](PROPUESTA.md)**.
+
 
 ## Stack
 

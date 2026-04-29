@@ -1,7 +1,6 @@
 # Historias de Usuario — Backlog
 
 > Para los criterios de aceptación detallados de las historias del Sprint 1
-> ver [PROPUESTA.md §8.1](../PROPUESTA.md).
 
 ## Sprint 1 (en curso)
 
