@@ -22,7 +22,3 @@ export const api = {
   crearRegistro: (data) =>
     request("/registros", { method: "POST", body: JSON.stringify(data) }),
 };
-  listarEventos: () => request("/eventos"),
-  crearRegistro: (data) =>
-    request("/registros", { method: "POST", body: JSON.stringify(data) }),
-};
