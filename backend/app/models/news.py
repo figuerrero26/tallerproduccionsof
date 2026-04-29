@@ -1,7 +1,7 @@
 from datetime import datetime
 from sqlalchemy import Column, Integer, String, Text, DateTime
 
-from tallerproduccionsof.backend.app.database import Base
+from app.database import Base
 
 
 class News(Base):

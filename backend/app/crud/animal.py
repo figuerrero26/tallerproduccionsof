@@ -1,8 +1,8 @@
 from typing import Optional
 from sqlalchemy.orm import Session
 
-from tallerproduccionsof.backend.app.models.animal import Animal
-from tallerproduccionsof.backend.app.schemas.animal import AnimalCreate, AnimalUpdate
+from app.models.animal import Animal
+from app.schemas.animal import AnimalCreate, AnimalUpdate
 
 
 def get_all(db: Session, estado: Optional[str] = None):

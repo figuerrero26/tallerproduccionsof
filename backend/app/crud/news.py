@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 
-from tallerproduccionsof.backend.app.models.news import News
-from tallerproduccionsof.backend.app.schemas.news import NewsCreate, NewsUpdate
+from app.models.news import News
+from app.schemas.news import NewsCreate, NewsUpdate
 
 
 def get_all(db: Session):

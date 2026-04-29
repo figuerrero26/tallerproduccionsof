@@ -2,9 +2,9 @@ from typing import List, Optional
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
-from tallerproduccionsof.backend.app.database import get_db
-from tallerproduccionsof.backend.app.schemas.animal import AnimalCreate, AnimalUpdate, AnimalOut
-from tallerproduccionsof.backend.app.crud import animal as crud
+from app.database import get_db
+from app.schemas.animal import AnimalCreate, AnimalUpdate, AnimalOut
+from app.crud import animal as crud
 
 router = APIRouter(prefix="/animales", tags=["animales"])
 

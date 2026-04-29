@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, Text, DateTime
 from sqlalchemy.orm import relationship
 
-from tallerproduccionsof.backend.app.database import Base
+from app.database import Base
 
 
 class Event(Base):

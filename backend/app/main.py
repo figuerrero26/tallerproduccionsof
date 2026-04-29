@@ -2,11 +2,11 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from tallerproduccionsof.backend.app.database import Base, engine
-from tallerproduccionsof.backend.app import models  # noqa: F401 - registra los modelos en Base
-from tallerproduccionsof.backend.app.routers import news
-from tallerproduccionsof.backend.app.routers import registrations
-from tallerproduccionsof.backend.app.routers import animals, events
+from app.database import Base, engine
+from app import models  # noqa: F401 - registra los modelos en Base
+from app.routers import news
+from app.routers import registrations
+from app.routers import animals, events
 
 
 @asynccontextmanager

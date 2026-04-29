@@ -9,8 +9,8 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import StaticPool
 
-from tallerproduccionsof.backend.app.main import app
-from tallerproduccionsof.backend.app.database import Base, get_db
+from app.main import app
+from app.database import Base, get_db
 
 
 engine = create_engine(

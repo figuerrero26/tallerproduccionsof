@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 
-from tallerproduccionsof.backend.app.models.registration import Registration
-from tallerproduccionsof.backend.app.schemas.registration import RegistrationCreate
+from app.models.registration import Registration
+from app.schemas.registration import RegistrationCreate
 
 
 def get_all(db: Session):

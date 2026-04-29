@@ -2,9 +2,9 @@ from typing import List
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
-from tallerproduccionsof.backend.app.database import get_db
-from tallerproduccionsof.backend.app.schemas.event import EventCreate, EventUpdate, EventOut
-from tallerproduccionsof.backend.app.crud import event as crud
+from app.database import get_db
+from app.schemas.event import EventCreate, EventUpdate, EventOut
+from app.crud import event as crud
 
 router = APIRouter(prefix="/eventos", tags=["eventos"])
 

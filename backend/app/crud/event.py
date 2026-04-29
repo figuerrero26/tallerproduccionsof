@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 
-from tallerproduccionsof.backend.app.models.event import Event
-from tallerproduccionsof.backend.app.schemas.event import EventCreate, EventUpdate
+from app.models.event import Event
+from app.schemas.event import EventCreate, EventUpdate
 
 
 def get_all(db: Session):

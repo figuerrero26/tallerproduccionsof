@@ -2,7 +2,7 @@ from datetime import datetime
 from typing import Optional
 from pydantic import BaseModel, ConfigDict
 
-from tallerproduccionsof.backend.app.models.animal import EstadoAnimal
+from app.models.animal import EstadoAnimal
 
 
 class AnimalBase(BaseModel):

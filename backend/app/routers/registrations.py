@@ -2,9 +2,9 @@ from typing import List
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
-from tallerproduccionsof.backend.app.database import get_db
-from tallerproduccionsof.backend.app.schemas.registration import RegistrationCreate, RegistrationOut
-from tallerproduccionsof.backend.app.crud import registration as crud
+from app.database import get_db
+from app.schemas.registration import RegistrationCreate, RegistrationOut
+from app.crud import registration as crud
 
 router = APIRouter(prefix="/registros", tags=["registros"])
 

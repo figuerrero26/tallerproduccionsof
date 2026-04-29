@@ -2,9 +2,9 @@ from typing import List
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
-from tallerproduccionsof.backend.app.database import get_db
-from tallerproduccionsof.backend.app.schemas.news import NewsCreate, NewsUpdate, NewsOut
-from tallerproduccionsof.backend.app.crud import news as crud
+from app.database import get_db
+from app.schemas.news import NewsCreate, NewsUpdate, NewsOut
+from app.crud import news as crud
 
 router = APIRouter(prefix="/noticias", tags=["noticias"])
 
