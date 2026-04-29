@@ -27,8 +27,8 @@ Servicios disponibles:
 | Servicio | URL |
 |---|---|
 | Frontend | http://localhost:5173 |
-| API | http://localhost:8000 |
-| Documentación interactiva (Swagger) | http://localhost:8000/docs |
+| API | http://localhost:8080 |
+| Documentación interactiva (Swagger) | http://localhost:8080/docs |
 | MySQL | localhost:33306 (`root` / `root`) |
 
 Para detener todo:
@@ -152,5 +152,5 @@ Prefijo: `/api/v1`
 | Eventos | `GET /eventos`, `GET /eventos/{id}`, `POST /eventos`, `PUT /eventos/{id}`, `DELETE /eventos/{id}` |
 | Registros | `GET /registros`, `GET /registros/{id}`, `POST /registros`, `DELETE /registros/{id}` |
 
-Documentación interactiva completa: http://localhost:8000/docs (Swagger UI
+Documentación interactiva completa: http://localhost:8080/docs (Swagger UI
 generado automáticamente por FastAPI).

@@ -290,12 +290,12 @@ services:
     depends_on:
       - db
     ports:
-      - "8000:8000"
+      - "8080:8000"
 
   frontend:
     build: ./frontend
     environment:
-      VITE_API_URL: http://localhost:8000/api/v1
+      VITE_API_URL: http://localhost:8080/api/v1
     depends_on:
       - backend
     ports:
@@ -310,7 +310,7 @@ volumes:
 | Servicio | Imagen / build | Función | Puerto |
 |---|---|---|---|
 | **db** | `mysql:8` | Almacena las 4 tablas. Usa volumen para persistencia. | 33306 (host) → 3306 (contenedor) |
-| **backend** | `./backend` (FastAPI) | Expone la API REST. Se conecta a `db` por el nombre de servicio. | 8000 |
+| **backend** | `./backend` (FastAPI) | Expone la API REST. Se conecta a `db` por el nombre de servicio. | 8080 (host) → 8000 (contenedor) |
 | **frontend** | `./frontend` (React + Vite) | Sirve la SPA. Llama al backend por `VITE_API_URL`. | 5173 |
 
 Para levantar todo el sistema:
