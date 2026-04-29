@@ -29,7 +29,7 @@ Servicios disponibles:
 | Frontend | http://localhost:5173 |
 | API | http://localhost:8000 |
 | Documentación interactiva (Swagger) | http://localhost:8000/docs |
-| MySQL | localhost:3306 (`root` / `root`) |
+| MySQL | localhost:33306 (`root` / `root`) |
 
 Para detener todo:
 

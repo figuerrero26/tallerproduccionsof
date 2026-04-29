@@ -281,7 +281,7 @@ services:
     volumes:
       - db_data:/var/lib/mysql
     ports:
-      - "3306:3306"
+      - "33306:3306"
 
   backend:
     build: ./backend
@@ -309,7 +309,7 @@ volumes:
 
 | Servicio | Imagen / build | Función | Puerto |
 |---|---|---|---|
-| **db** | `mysql:8` | Almacena las 4 tablas. Usa volumen para persistencia. | 3306 |
+| **db** | `mysql:8` | Almacena las 4 tablas. Usa volumen para persistencia. | 33306 (host) → 3306 (contenedor) |
 | **backend** | `./backend` (FastAPI) | Expone la API REST. Se conecta a `db` por el nombre de servicio. | 8000 |
 | **frontend** | `./frontend` (React + Vite) | Sirve la SPA. Llama al backend por `VITE_API_URL`. | 5173 |
 
